@@ -2,4 +2,100 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #f4f4f4;
+}
+
+html, body {
+  height: 80%;
+}
+
+body {
+  background-color: rgb(147, 206, 186);
+}
+
+.container {
+  height: 90%;
+  width: 20%;
+  margin: 12em auto 0;
+  padding: 1.2em;
+  border: 1px solid black;
+  border-radius: 1em;
+  background-color: #2e2a2a;
+}
+
+.container p {
+  margin-top: -1em;
+}
+
+.calculator {
+  height: 100%;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  background-color: #fff;
+}
+
+.display {
+  background-color: #000;
+  height: 20%;
+  border-radius: 0.7em;
+  position: relative;
+}
+
+.display p {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font-size: 2rem;
+}
+
+.btnContainer {
+  height: 75%;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.btnRow {
+  flex: 1;
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em;
+  background-color: #fff;
+}
+
+.btns {
+  flex: 1;
+  color: black;
+  font-size: 1em;
+}
+
+.delete,
+.all-clear {
+  background-color: rgb(139, 91, 91);
+  color: #fff;
+}
+
+.lastRow {
+  display: flex;
+}
+
+.zero {
+  flex: 2;
+}
+
+.operators {
+  background-color: #d1c9c9;
+  font-size: 1.3em;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.3em;
+  background-color: #f4f4f4;
+  color: #000;
+  text-align: center;
 }
