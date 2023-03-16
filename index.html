@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,42 +8,60 @@
   <link rel="stylesheet" href="style.css">
   <title>Odin | Project Calculator</title>
 </head>
+
 <body>
   <main class="container">
     <p>Calculathor</p>
     <div class="calculator">
-      <div class="display">
-        <p>0</p>
+      <div class="display" id="display">
+        <div id="display-value"></div>
       </div>
       <div class="btnContainer">
         <div class="btnRow">
-          <button class="btns delete">DEL</button>
-          <button class="btns all-clear">AC</button>
-          <button class="btns operators">%</button>
-          <button class="btns operators">/</button>
+          <button class="btns delete" id="delete">DEL</button>
+          <button class="btns all-clear" id="all-clear">AC</button>
+          <button class="btns btn-operators" id="operator" value="^">
+            exp
+          </button>
+          <button class="btns btn-operators" id="operator" value="/">
+            /
+          </button>
         </div>
         <div class="btnRow">
-          <button class="btns">7</button>
-          <button class="btns">8</button>
-          <button class="btns">9</button>
-          <button class="btns operators">*</button>
+          <button class="btns" id="number" value="7">7</button>
+          <button class="btns" id="number" value="8">8</button>
+          <button class="btns" id="number" value="9">9</button>
+          <button class="btns btn-operators" id="operator" value="*">
+            *
+          </button>
         </div>
         <div class="btnRow">
-          <button class="btns">4</button>
-          <button class="btns">5</button>
-          <button class="btns">6</button>
-          <button class="btns operators">+</button>
+          <button class="btns" id="number" value="4">4</button>
+          <button class="btns" id="number" value="5">5</button>
+          <button class="btns" id="number" value="6">6</button>
+          <button class="btns btn-operators" id="operator" value="+">
+            +
+          </button>
         </div>
         <div class="btnRow">
-          <button class="btns">1</button>
-          <button class="btns">2</button>
-          <button class="btns">3</button>
-          <button class="btns operators">-</button>
+          <button class="btns" id="number" value="1">1</button>
+          <button class="btns" id="number" value="2">2</button>
+          <button class="btns" id="number" value="3">3</button>
+          <button class="btns btn-operators" id="operator" value="-">
+            -
+          </button>
         </div>
         <div class="btnRow lastRow">
-          <button class="btns zero">0</button>
-          <button class="btns operators">a**</button>
-          <button class="btns operators">=</button>
+          <button class="btns zero" id="number" value="0">0</button>
+          <button class="btns btn-operators" id="operator">
+            .
+          </button>
+          <button class="btns btn-operators" id="operator">
+            +/-
+          </button>
+          <button class="btns btn-operators" id="equals">
+            =
+          </button>
         </div>
       </div>
     </div>
@@ -50,4 +69,5 @@
   <footer>Calculator app by koldtea</footer>
   <script src="main.js"></script>
 </body>
+
 </html>

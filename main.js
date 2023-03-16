@@ -1,8 +1,12 @@
 // References
-
-// Listeners
-
-// Functions
+const numBtn = document.querySelectorAll('#number')
+const operatorBtn = document.querySelectorAll('#operator')
+const equalBtn = document.getElementById('equals')
+const displayCalc = document.getElementById('display')
+const userValue = document.getElementById('display-value')
+const allClear = document.getElementById('all-clear')
+const deleteBtn = document.getElementById('delete')
+const allBtns = document.querySelectorAll('button')
 
 // Math Operators
 
@@ -14,20 +18,62 @@ const multiply = (a, b) => a * b;
 
 const divide = (a, b) => (a / b).toFixed(1);
 
+const exponent = (a, b) => (a ** b);
+
 // Operate Calculator
 
 const operate = (operator, a, b) => {
-  if (operator === "+") { return add(a,b) };
-  if (operator === "-") { return subtract(a,b) };
-  if (operator === "*") { return multiply(a,b) };
-  if (operator === "/") { return divide(a,b) };
+  const numA = Number(a)
+  const numB = Number(b)
+
+  if (operator === "+") { displayCalc.innerText = add(numA, numB) };
+  if (operator === "-") { displayCalc.innerText = subtract(numA, numB) };
+  if (operator === "*") { displayCalc.innerText = multiply(numA, numB) };
+  if (operator === "/") { displayCalc.innerText = divide(numA, numB) };
+  if (operator === "exp") { displayCalc.innerText = exponent(numA, numB) };
 };
 
-// Tests
+// Display Value
 
-console.log(add(4, 7))
+allBtns.forEach(e => {
+  e.addEventListener('click', () => {
+    const value = e.value;
 
-console.log(operate("+", 2, 3))
-console.log(operate("-", 2, 3))
-console.log(operate("*", 2, 3))
-console.log(operate("/", 2, 3))
+    equalBtn.addEventListener('click', () => {
+      if (displayCalc.innerText.includes('+')) {
+        const splitText = displayCalc.innerText.split('+');
+        operate('+', splitText[0], splitText[1])
+      }
+
+      if (displayCalc.innerText.includes('-')) {
+        const splitText = displayCalc.innerText.split('-');
+        operate('-', splitText[0], splitText[1])
+      }
+
+      if (displayCalc.innerText.includes('/')) {
+        const splitText = displayCalc.innerText.split('/');
+        operate('/', splitText[0], splitText[1])
+      }
+
+      if (displayCalc.innerText.includes('*')) {
+        const splitText = displayCalc.innerText.split('*');
+        operate('*', splitText[0], splitText[1])
+      }
+
+      if (displayCalc.innerText.includes('^')) {
+        const splitText = displayCalc.innerText.split('^');
+        operate('exp', splitText[0], splitText[1])
+      }
+
+    })
+
+    displayCalc.innerText += value;
+  })
+});
+
+// Listeners
+allClear.addEventListener('click', () => displayCalc.innerText = "")
+
+deleteBtn.addEventListener('click', () => {
+  displayCalc.innerText = displayCalc.innerText.slice(0, -1)
+});
